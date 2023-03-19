@@ -1,27 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:myresepapp/beranda.dart';
 
-void main() {
-  runApp(const MyHomePage());
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
+class Beranda extends StatefulWidget {
+  const Beranda({Key? key}) : super(key: key);
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _MyWidgetState createState() => _MyWidgetState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyWidgetState extends State<Beranda> {
   int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   int _selectedIndex = 0;
+
   static const List<Widget> _widgetOptions = <Widget>[
     Text('Home'),
     Text('Search'),
@@ -30,18 +18,24 @@ class _MyHomePageState extends State<MyHomePage> {
     Text('Profil'),
   ];
 
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
-    if (index == 4) {
-      // jika indeks item adalah 4 (profil)
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => Beranda()), // navigasi ke halaman profil
-      );
-    }
+    //if (index == 4) {
+    //  // jika indeks item adalah 4 (profil)
+    //  Navigator.push(
+    //    context,
+    //    MaterialPageRoute(
+    //        builder: (context) => ProfilePage()), // navigasi ke halaman profil
+    //  );
+    //}
   }
 
   @override
