@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
@@ -6,6 +7,27 @@ class Detail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: ListView(
+        children: [
+          Column(
+            children: [
+              Container(
+                color: Colors.amber,
+                child: Text("Step1"),
+              ),
+              Container(
+                color: Colors.black,
+                child: Text("Step1"),
+              ),
+              Container(
+                color: Colors.yellow,
+                child: Text("Step1"),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
   }
 }
