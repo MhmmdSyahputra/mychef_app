@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:p01/utils/global.colors.dart';
 import 'package:p01/view/login.view.dart';
+import '../mainMenu_view.dart';
 
 class ButtonGlobal extends StatelessWidget {
   const ButtonGlobal({ Key? key }) : super(key: key);
@@ -11,7 +12,14 @@ class ButtonGlobal extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        print('Login');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const MyHomePage();
+            },
+          ),
+        );
       },
       child: Container(
         alignment: Alignment.center,
