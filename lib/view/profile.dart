@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:myresepapp/beranda.dart';
-import 'package:myresepapp/main.dart';
+import 'beranda.dart';
+import 'edit.profile.view.dart';
+import 'mainMenu_view.dart';
+import 'login.view.dart';
 
 class ProfilePage extends StatelessWidget {
   final List<String> images = [
@@ -140,7 +142,16 @@ class ProfilePage extends StatelessWidget {
                       ),
                       padding: EdgeInsets.all(10),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return EditProfile();
+                          },
+                        ),
+                      );
+                    },
                   ),
                 ),
                 Container(
@@ -154,7 +165,16 @@ class ProfilePage extends StatelessWidget {
                       ),
                       padding: EdgeInsets.all(10),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return LoginView();
+                          },
+                        ),
+                      );
+                    },
                   ),
                 ),
               ],

@@ -11,6 +11,7 @@ class Upload extends StatefulWidget {
 class _UploadState extends State<Upload> {
   int _inputBoxCount = 1;
 
+  // membuat fungsi setstate
   void _addInputBox() {
     setState(() {
       _inputBoxCount++;
@@ -72,7 +73,8 @@ class _UploadState extends State<Upload> {
                 Container(
                   margin: EdgeInsets.all(20),
                   child: ElevatedButton(
-                    onPressed: _addInputBox,
+                    onPressed:
+                        _addInputBox, //memanggil fungsi yg menerapkan setState
                     child: Text("Tambah Step"),
                   ),
                 ),
