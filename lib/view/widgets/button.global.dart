@@ -2,36 +2,30 @@
 
 import 'package:flutter/material.dart';
 import 'package:p01/utils/global.colors.dart';
-import '../mainMenu_view.dart';
+import 'package:p01/view/login.view.dart';
 
 class ButtonGlobal extends StatelessWidget {
-  const ButtonGlobal({Key? key}) : super(key: key);
+  const ButtonGlobal({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return MyHomePage();
-            },
-          ),
-        );
+        print('Login');
       },
       child: Container(
         alignment: Alignment.center,
         height: 55,
         decoration: BoxDecoration(
-            color: GlobalColors.mainColor,
-            borderRadius: BorderRadius.circular(6),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 10,
-              )
-            ]),
+          color: GlobalColors.mainColor,
+          borderRadius: BorderRadius.circular(6),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+            )
+          ]
+        ),
         child: const Text(
           'Sign In',
           style: TextStyle(
@@ -45,26 +39,34 @@ class ButtonGlobal extends StatelessWidget {
 }
 
 class ButtonGlobal2 extends StatelessWidget {
-  const ButtonGlobal2({Key? key}) : super(key: key);
+  const ButtonGlobal2({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        print('Regis');
+        Navigator.push(
+          context, 
+          MaterialPageRoute(
+            builder: (context){
+            return LoginView();
+            },
+          ),
+        );
       },
       child: Container(
         alignment: Alignment.center,
         height: 55,
         decoration: BoxDecoration(
-            color: GlobalColors.mainColor,
-            borderRadius: BorderRadius.circular(6),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 10,
-              )
-            ]),
+          color: GlobalColors.mainColor,
+          borderRadius: BorderRadius.circular(6),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+            )
+          ]
+        ),
         child: const Text(
           'Register',
           style: TextStyle(
@@ -78,28 +80,36 @@ class ButtonGlobal2 extends StatelessWidget {
 }
 
 class ButtonGlobal3 extends StatelessWidget {
-  const ButtonGlobal3({Key? key}) : super(key: key);
+  const ButtonGlobal3({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        print('Regis');
+        Navigator.push(
+          context, 
+          MaterialPageRoute(
+            builder: (context){
+            return LoginView();
+            },
+          ),
+        );
       },
       child: Container(
         alignment: Alignment.center,
         height: 55,
         decoration: BoxDecoration(
-            color: GlobalColors.mainColor,
-            borderRadius: BorderRadius.circular(6),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 10,
-              )
-            ]),
+          color: GlobalColors.mainColor,
+          borderRadius: BorderRadius.circular(6),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+            )
+          ]
+        ),
         child: const Text(
-          'Send Link',
+          'Send Verification Link',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w600,
@@ -111,7 +121,7 @@ class ButtonGlobal3 extends StatelessWidget {
 }
 
 class ButtonGlobal4 extends StatelessWidget {
-  const ButtonGlobal4({Key? key}) : super(key: key);
+  const ButtonGlobal4({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -125,14 +135,15 @@ class ButtonGlobal4 extends StatelessWidget {
         width: 70,
         padding: const EdgeInsets.symmetric(horizontal: 1),
         decoration: BoxDecoration(
-            color: GlobalColors.mainColor,
-            borderRadius: BorderRadius.circular(6),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 10,
-              )
-            ]),
+          color: GlobalColors.mainColor,
+          borderRadius: BorderRadius.circular(6),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+            )
+          ]
+        ),
         child: const Text(
           'Cancel',
           style: TextStyle(
@@ -146,7 +157,7 @@ class ButtonGlobal4 extends StatelessWidget {
 }
 
 class ButtonGlobal5 extends StatelessWidget {
-  const ButtonGlobal5({Key? key}) : super(key: key);
+  const ButtonGlobal5({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -160,14 +171,15 @@ class ButtonGlobal5 extends StatelessWidget {
         width: 70,
         padding: const EdgeInsets.symmetric(horizontal: 1),
         decoration: BoxDecoration(
-            color: GlobalColors.mainColor,
-            borderRadius: BorderRadius.circular(6),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 10,
-              )
-            ]),
+          color: GlobalColors.mainColor,
+          borderRadius: BorderRadius.circular(6),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+            )
+          ]
+        ),
         child: const Text(
           'Save',
           style: TextStyle(

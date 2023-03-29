@@ -23,14 +23,9 @@ class RegisterView extends StatelessWidget {
                 const SizedBox(height: 20),
                 Container(
                   alignment: Alignment.center,
-                  child: Text(
-                    'Logo',
-                    style: TextStyle(
-                      color: GlobalColors.textColor,
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold
-                    ),
-                  ),
+                  child: Center(
+                  child: Image.asset('assets/images/logo.png'), 
+                ),
                 ),
                 const SizedBox(height: 50),
                 Text(

@@ -24,16 +24,8 @@ class LoginView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 20),
-                Container(
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Logo',
-                    style: TextStyle(
-                      color: GlobalColors.textColor,
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold
-                    ),
-                  ),
+                Center(
+                  child: Image.asset('assets/images/logo.png'), 
                 ),
                 const SizedBox(height: 50),
                 Text(
@@ -118,7 +110,7 @@ class LoginView extends StatelessWidget {
                 ),
               ]
               ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 25),
                 const ButtonGlobal(),
                 const SizedBox(height: 25),
                 const SocialLogin(),

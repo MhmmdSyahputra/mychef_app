@@ -44,7 +44,7 @@ class SocialLogin extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: 15),
               //Facebook
               Expanded(
                 child: Container(
@@ -65,7 +65,7 @@ class SocialLogin extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: 15),
               //Twitter
               Expanded(
                 child: Container(
@@ -137,7 +137,7 @@ class SocialLogin2 extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: 15),
               //Facebook
               Expanded(
                 child: Container(
@@ -158,7 +158,7 @@ class SocialLogin2 extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: 15),
               //Twitter
               Expanded(
                 child: Container(
