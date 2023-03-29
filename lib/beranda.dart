@@ -1,441 +1,112 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+class Post {
+  final String coverResep;
+  final String namauser;
+  final String title;
+  final String shortText;
+
+  Post(
+      {required this.coverResep,
+      required this.namauser,
+      required this.title,
+      required this.shortText});
+}
+
+final List<Post> posts = [
+  Post(
+    coverResep:
+        'https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    namauser: 'Putra',
+    title: 'Resep Burger',
+    shortText:
+        'Saya ingin memberikan sebuah resep yg saya punya yaitu resep membuat burger daging',
+  ),
+  Post(
+    coverResep:
+        'https://images.unsplash.com/photo-1626379801357-537572de4ad6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8anVua2Zvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    namauser: 'Julian',
+    title: 'Resep Membuat Roti Lumer',
+    shortText:
+        'Saya mau memberikan sebuah resep untuk membuat roti yg lumer dan lezat dengan bahan bahan tepung, coklat, dan lain lain',
+  ),
+  Post(
+    coverResep:
+        'https://images.unsplash.com/photo-1534353473418-4cfa6c56fd38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGRyaW5rfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    namauser: 'Hedry',
+    title: 'Cara Membuat Jus Kueni yang Lezat',
+    shortText:
+        'Saya ingin memberikan sebuah resep jus kueni yg lezat yg orang tidak banyak tau, dengan bahan bahan sebagi berikut, kueni ',
+  ),
+  Post(
+    coverResep:
+        'https://media.istockphoto.com/id/1355739707/photo/roasted-turkey.jpg?s=170667a&w=0&k=20&c=LwwbCeLOHaEH9_RIynm8qiZildaTZQMm-745T0TuwTs=',
+    namauser: 'Muhammad Yusof',
+    title: 'Resep Membuat Ayam Marquita',
+    shortText:
+        'Saya akan membagikan sebuah resep makanan yaitu ayam marquita yg lezat dan bergizi dengan ayam yg utuh begini cara nya',
+  ),
+];
+
 class Beranda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 15),
-            padding: EdgeInsets.all(10),
-            child: Column(
+        body: ListView.builder(
+      itemCount: posts.length,
+      itemBuilder: (context, index) {
+        return Card(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
               children: [
-                ListTile(
-                  leading: Column(
-                    children: [
-                      Image.network(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXM1O5QpP35fFolHlngwE1gEA3Y643TIdEWA&usqp=CAU',
-                        width: 150.0,
-                        height: 130.0,
-                        fit: BoxFit.fill,
-                      ),
-                    ],
+                Container(
+                  width: 150,
+                  height: 150,
+                  margin: EdgeInsets.only(right: 8.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.0),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(posts[index].coverResep),
+                    ),
                   ),
-                  title: Column(
+                ),
+                Expanded(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        children: [
-                          Icon(Icons.person, size: 24),
-                          SizedBox(width: 8),
-                          Text(
-                            'Putra',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 8),
                       Text(
-                        'Resep Ayam Sambal Bakar',
+                        posts[index].namauser,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      SizedBox(height: 8.0),
+                      Text(
+                        posts[index].title,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0,
                         ),
                       ),
-                    ],
-                  ),
-                  subtitle: Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.s',
-                    maxLines: 5,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-                SizedBox(height: 10),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: ElevatedButton(
-                    child: Text('Detail'),
-                    onPressed: () {},
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 15),
-            padding: EdgeInsets.all(10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ListTile(
-                  leading: Column(
-                    children: [
-                      Image.network(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXM1O5QpP35fFolHlngwE1gEA3Y643TIdEWA&usqp=CAU',
-                        width: 150.0,
-                        height: 130.0,
-                        fit: BoxFit.fill,
-                      ),
-                    ],
-                  ),
-                  title: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(Icons.person, size: 24),
-                          SizedBox(width: 8),
-                          Text(
-                            'Julian',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 8),
+                      SizedBox(height: 8.0),
                       Text(
-                        'Cara Membuat Ayam Geprek Bensu',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ),
+                        posts[index].shortText,
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
-                  ),
-                  subtitle: Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.s',
-                    maxLines: 5,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-                SizedBox(height: 10),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: ElevatedButton(
-                    child: Text('Detail'),
-                    onPressed: () {},
                   ),
                 ),
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 15),
-            padding: EdgeInsets.all(10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ListTile(
-                  leading: Column(
-                    children: [
-                      Image.network(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXM1O5QpP35fFolHlngwE1gEA3Y643TIdEWA&usqp=CAU',
-                        width: 150.0,
-                        height: 130.0,
-                        fit: BoxFit.fill,
-                      ),
-                    ],
-                  ),
-                  title: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(Icons.person, size: 24),
-                          SizedBox(width: 8),
-                          Text(
-                            'Hendry',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        'Resep Cumi Goreng Tepung',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ),
-                      ),
-                    ],
-                  ),
-                  subtitle: Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.s',
-                    maxLines: 5,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-                SizedBox(height: 10),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: ElevatedButton(
-                    child: Text('Detail'),
-                    onPressed: () {},
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 15),
-            padding: EdgeInsets.all(10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ListTile(
-                  leading: Column(
-                    children: [
-                      Image.network(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXM1O5QpP35fFolHlngwE1gEA3Y643TIdEWA&usqp=CAU',
-                        width: 150.0,
-                        height: 130.0,
-                        fit: BoxFit.fill,
-                      ),
-                    ],
-                  ),
-                  title: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(Icons.person, size: 24),
-                          SizedBox(width: 8),
-                          Text(
-                            'Aldi',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        'Cara Buat Mie Aceh',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ),
-                      ),
-                    ],
-                  ),
-                  subtitle: Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.s',
-                    maxLines: 5,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-                SizedBox(height: 10),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: ElevatedButton(
-                    child: Text('Detail'),
-                    onPressed: () {},
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 15),
-            padding: EdgeInsets.all(10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ListTile(
-                  leading: Column(
-                    children: [
-                      Image.network(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXM1O5QpP35fFolHlngwE1gEA3Y643TIdEWA&usqp=CAU',
-                        width: 150.0,
-                        height: 130.0,
-                        fit: BoxFit.fill,
-                      ),
-                    ],
-                  ),
-                  title: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(Icons.person, size: 24),
-                          SizedBox(width: 8),
-                          Text(
-                            'Albert',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        'Resep Mie Bangladesh',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ),
-                      ),
-                    ],
-                  ),
-                  subtitle: Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.s',
-                    maxLines: 5,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-                SizedBox(height: 10),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: ElevatedButton(
-                    child: Text('Detail'),
-                    onPressed: () {},
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 15),
-            padding: EdgeInsets.all(10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ListTile(
-                  leading: Column(
-                    children: [
-                      Image.network(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXM1O5QpP35fFolHlngwE1gEA3Y643TIdEWA&usqp=CAU',
-                        width: 150.0,
-                        height: 130.0,
-                        fit: BoxFit.fill,
-                      ),
-                    ],
-                  ),
-                  title: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(Icons.person, size: 24),
-                          SizedBox(width: 8),
-                          Text(
-                            'Usop',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        'Cara Buat Sanger Panas',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ),
-                      ),
-                    ],
-                  ),
-                  subtitle: Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.s',
-                    maxLines: 5,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-                SizedBox(height: 10),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: ElevatedButton(
-                    child: Text('Detail'),
-                    onPressed: () {},
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 15),
-            padding: EdgeInsets.all(10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ListTile(
-                  leading: Column(
-                    children: [
-                      Image.network(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXM1O5QpP35fFolHlngwE1gEA3Y643TIdEWA&usqp=CAU',
-                        width: 150.0,
-                        height: 130.0,
-                        fit: BoxFit.fill,
-                      ),
-                    ],
-                  ),
-                  title: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(Icons.person, size: 24),
-                          SizedBox(width: 8),
-                          Text(
-                            'Rizky',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        'Tutorial Membuat Ayam Goreng Seafood',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ),
-                      ),
-                    ],
-                  ),
-                  subtitle: Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.s',
-                    maxLines: 5,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-                SizedBox(height: 10),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: ElevatedButton(
-                    child: Text('Detail'),
-                    onPressed: () {},
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+        );
+      },
+    ));
   }
 }

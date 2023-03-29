@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myresepapp/beranda.dart';
 import 'package:myresepapp/profile.dart';
+import 'package:myresepapp/upload.dart';
 
 void main() {
   runApp(const MyHomePage());
@@ -40,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
         //body = SearchPage();
         break;
       case 2:
-        //body = UploadPage();
+        body = Upload();
         break;
       case 3:
         //body = NotificationPage();
