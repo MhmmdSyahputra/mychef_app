@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:p01/view/widgets/button.global.dart';
 import 'package:p01/view/widgets/text.form.global.dart';
-import 'package:p01/utils/global.colors.dart';
 
 class ForgetView extends StatelessWidget {
   ForgetView({ Key? key }) : super(key: key);
@@ -25,10 +24,10 @@ class ForgetView extends StatelessWidget {
                   child: Image.asset('assets/images/logo.png'),
                 ),
                 const SizedBox(height: 50),
-                Text(
+                const Text(
                   'Input your email',
                   style: TextStyle(
-                    color: GlobalColors.textColor,
+                    color: Colors.black,
                     fontSize: 16,
                     fontWeight: FontWeight.w500
                   ),

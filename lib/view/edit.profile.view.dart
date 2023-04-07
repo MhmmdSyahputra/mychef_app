@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:p01/utils/global.colors.dart';
 import 'package:p01/view/widgets/button.global.dart';
+// ignore: unused_import
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class EditProfile extends StatelessWidget {
   const EditProfile({ Key? key }) : super(key: key);
@@ -59,17 +61,19 @@ class EditProfile extends StatelessWidget {
               const SizedBox(
                 height: 35,
               ),
-              buildTextField('Full Name', false),
-              buildTextField('Email', false),
-              buildTextField('Password', true),
+              buildTextField1('  Username', false),
+              buildTextField2('  Full Name', false),
+              buildTextField3('  Email', false),
+              buildTextField4('  Password', true),
               // ignore: prefer_const_constructors
               SizedBox(
                 height: 35
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
                   ButtonGlobal4(),
+                  SizedBox(width: 40),
                   ButtonGlobal5()
                 ],
               ),
@@ -80,12 +84,15 @@ class EditProfile extends StatelessWidget {
     ); 
   }
 
-  Widget buildTextField(String labelText, bool isPasswordTextField) {
+  Widget buildTextField1(String labelText, bool isPasswordTextField) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 35.0),
       child: TextField(
         obscureText: isPasswordTextField,
         decoration: InputDecoration(
+          icon: const Icon(
+            Icons.tag,
+          ),
           contentPadding: const EdgeInsets.only(bottom: 3),
           labelText: labelText,
           hintStyle: TextStyle(
@@ -98,3 +105,66 @@ class EditProfile extends StatelessWidget {
     );
   }
 }
+
+Widget buildTextField2(String labelText, bool isPasswordTextField) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 35.0),
+      child: TextField(
+        obscureText: isPasswordTextField,
+        decoration: InputDecoration(
+          icon: const Icon(
+            Icons.text_format,
+          ),
+          contentPadding: const EdgeInsets.only(bottom: 3),
+          labelText: labelText,
+          hintStyle: TextStyle(
+            fontSize: 16, 
+            fontWeight: FontWeight.bold,
+            color: GlobalColors.textColor,
+          )
+        ),
+      ),
+    );
+  }
+
+  Widget buildTextField3(String labelText, bool isPasswordTextField) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 35.0),
+      child: TextField(
+        obscureText: isPasswordTextField,
+        decoration: InputDecoration(
+          icon: const Icon(
+            Icons.email
+          ),
+          contentPadding: const EdgeInsets.only(bottom: 3),
+          labelText: labelText,
+          hintStyle: TextStyle(
+            fontSize: 16, 
+            fontWeight: FontWeight.bold,
+            color: GlobalColors.textColor,
+          )
+        ),
+      ),
+    );
+  }
+
+  Widget buildTextField4(String labelText, bool isPasswordTextField) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 35.0),
+      child: TextField(
+        obscureText: isPasswordTextField,
+        decoration: InputDecoration(
+          icon: const Icon(
+            Icons.password,
+          ),
+          contentPadding: const EdgeInsets.only(bottom: 3),
+          labelText: labelText,
+          hintStyle: TextStyle(
+            fontSize: 16, 
+            fontWeight: FontWeight.bold,
+            color: GlobalColors.textColor,
+          )
+        ),
+      ),
+    );
+  }

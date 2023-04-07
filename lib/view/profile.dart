@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+// ignore: unnecessary_import, implementation_imports
 import 'package:flutter/src/widgets/framework.dart';
+// ignore: unused_import, implementation_imports
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:p01/utils/global.colors.dart';
+// ignore: unused_import
 import 'beranda.dart';
 import 'edit.profile.view.dart';
-import 'mainMenu_view.dart';
+import 'main.menu.dart';
 import 'login.view.dart';
 
+// ignore: use_key_in_widget_constructors
 class ProfilePage extends StatelessWidget {
   final List<String> images = [
     'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
@@ -31,26 +36,34 @@ class ProfilePage extends StatelessWidget {
         Row(
           children: [
             Expanded(
+              // ignore: sized_box_for_whitespace
               child: Container(
                 height: 150,
                 child: Center(
                   child: Column(
                     children: [
                       Container(
+                        // ignore: prefer_const_constructors
                         padding: EdgeInsets.only(
                             left: 10, top: 10, right: 10, bottom: 0),
+                        // ignore: prefer_const_constructors
                         child: CircleAvatar(
                           radius: 50, // ukuran radius lingkaran
+                          // ignore: prefer_const_constructors
                           backgroundImage: NetworkImage(
                             'https://images.unsplash.com/photo-1679189792474-6c2796dc78ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60',
                           ), // gambar background foto
                         ),
                       ),
+                      // ignore: avoid_unnecessary_containers
                       Container(
+                          // ignore: prefer_const_constructors
                           child: Center(
+                        // ignore: prefer_const_constructors
                         child: Text(
                           "Muhammad Syahputra",
                           textAlign: TextAlign.center,
+                          // ignore: prefer_const_constructors
                           style: TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
@@ -64,19 +77,24 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
             ),
+            // ignore: prefer_const_constructors
             SizedBox(
               width: 10,
             ),
             Expanded(
+              // ignore: sized_box_for_whitespace
               child: Container(
                 height: 150,
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(child: Text("43")),
+                      // ignore: avoid_unnecessary_containers, prefer_const_constructors
+                      Container(child: Text("14")),
                       Container(
+                        // ignore: prefer_const_constructors
                         padding: EdgeInsets.only(bottom: 20),
+                        // ignore: prefer_const_constructors
                         child: Text("Postingan"),
                       ),
                     ],
@@ -84,19 +102,24 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
             ),
+            // ignore: prefer_const_constructors
             SizedBox(
               width: 10,
             ),
             Expanded(
+              // ignore: sized_box_for_whitespace
               child: Container(
                 height: 70,
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      // ignore: avoid_unnecessary_containers, prefer_const_constructors
                       Container(child: Text("2.000")),
                       Container(
+                        // ignore: prefer_const_constructors
                         padding: EdgeInsets.only(bottom: 20),
+                        // ignore: prefer_const_constructors
                         child: Text("Pengikut"),
                       ),
                     ],
@@ -104,19 +127,24 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
             ),
+            // ignore: prefer_const_constructors
             SizedBox(
               width: 10,
             ),
             Expanded(
+              // ignore: sized_box_for_whitespace
               child: Container(
                 height: 70,
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      // ignore: avoid_unnecessary_containers, prefer_const_constructors
                       Container(child: Text("1")),
                       Container(
+                        // ignore: prefer_const_constructors
                         padding: EdgeInsets.only(bottom: 20),
+                        // ignore: prefer_const_constructors
                         child: Text("Mengikuti"),
                       ),
                     ],
@@ -126,20 +154,25 @@ class ProfilePage extends StatelessWidget {
             ),
           ],
         ),
+        // ignore: avoid_unnecessary_containers
         Container(
           child: Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
+                  // ignore: prefer_const_constructors
                   margin: EdgeInsets.only(left: 5, right: 5, bottom: 40),
                   width: 185,
                   child: ElevatedButton(
+                    // ignore: prefer_const_constructors, sort_child_properties_last
                     child: Text('Edit Profil'),
                     style: ElevatedButton.styleFrom(
+                      backgroundColor: GlobalColors.mainColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
+                      // ignore: prefer_const_constructors
                       padding: EdgeInsets.all(10),
                     ),
                     onPressed: () {
@@ -147,6 +180,7 @@ class ProfilePage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
+                            // ignore: prefer_const_constructors
                             return EditProfile();
                           },
                         ),
@@ -155,14 +189,18 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
                 Container(
+                  // ignore: prefer_const_constructors
                   margin: EdgeInsets.only(left: 5, right: 5, bottom: 40),
                   width: 185,
                   child: ElevatedButton(
+                    // ignore: prefer_const_constructors, sort_child_properties_last
                     child: Text('Logout'),
                     style: ElevatedButton.styleFrom(
+                      backgroundColor: GlobalColors.mainColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
+                      // ignore: prefer_const_constructors
                       padding: EdgeInsets.all(10),
                     ),
                     onPressed: () {
@@ -181,12 +219,16 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
         ),
+        // ignore: avoid_unnecessary_containers
         Container(
           child: Row(children: [
             Container(
+              // ignore: prefer_const_constructors
               margin: EdgeInsets.all(15),
+              // ignore: prefer_const_constructors
               child: Text(
                 "My Resep",
+                // ignore: prefer_const_constructors
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
@@ -195,18 +237,24 @@ class ProfilePage extends StatelessWidget {
             )
           ]),
         ),
+        // ignore: prefer_const_constructors
         Expanded(
+          // ignore: prefer_const_constructors
           child: Divider(
             thickness: 1,
             color: Colors.grey,
           ),
         ),
+        // ignore: avoid_unnecessary_containers
         Container(
             child: GridView.builder(
+          // ignore: prefer_const_constructors
           padding: EdgeInsets.all(8),
+          // ignore: prefer_const_constructors
           physics: NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: images.length,
+          // ignore: prefer_const_constructors
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             mainAxisSpacing: 8,
@@ -218,6 +266,7 @@ class ProfilePage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
+                    // ignore: prefer_const_constructors
                     builder: (context) => MyHomePage(),
                   ),
                 );

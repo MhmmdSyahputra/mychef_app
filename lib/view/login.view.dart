@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:p01/utils/global.colors.dart';
-import 'package:p01/view/edit.profile.view.dart';
 import 'package:p01/view/forgot.view.dart';
 import 'package:p01/view/register.view.dart';
 import 'package:p01/view/widgets/button.global.dart';
@@ -28,10 +27,10 @@ class LoginView extends StatelessWidget {
                   child: Image.asset('assets/images/logo.png'), 
                 ),
                 const SizedBox(height: 50),
-                Text(
+                const Text(
                   'Login to your account',
                   style: TextStyle(
-                    color: GlobalColors.textColor,
+                    color: Colors.black,
                     fontSize: 16,
                     fontWeight: FontWeight.w500
                   ),
@@ -60,10 +59,10 @@ class LoginView extends StatelessWidget {
 
                 Row(
                 children: [
-                Text(
+                const Text(
                   'Forget your password? ',
                   style: TextStyle(
-                    color: GlobalColors.textColor,
+                    color: Colors.black,
                     fontSize: 12,
                     fontWeight: FontWeight.w500
                   ),
@@ -81,28 +80,6 @@ class LoginView extends StatelessWidget {
                     },
                     child: Text(
                       'click here',
-                      style: TextStyle(
-                      color: GlobalColors.mainColor
-                    ),
-                  ),
-                ),
-              ]
-              ),
-              Row(
-                children: [
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context, 
-                      MaterialPageRoute(
-                        builder: (context){
-                          return const EditProfile();
-                          },
-                        ),
-                      );
-                    },
-                    child: Text(
-                      'edit profile',
                       style: TextStyle(
                       color: GlobalColors.mainColor
                     ),
@@ -128,6 +105,9 @@ class LoginView extends StatelessWidget {
           children: [
             const Text(
               'Don\'t have an account? ',
+              style: TextStyle(
+                color: Colors.black
+              ),
             ),
             InkWell(
               onTap: () {

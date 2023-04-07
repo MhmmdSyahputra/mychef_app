@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:p01/utils/global.colors.dart';
 import 'package:p01/view/login.view.dart';
-import '../mainMenu_view.dart';
+import '../main.menu.dart';
 
 class ButtonGlobal extends StatelessWidget {
   const ButtonGlobal({ Key? key }) : super(key: key);
@@ -135,7 +135,14 @@ class ButtonGlobal4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        print('Regis');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const MyHomePage();
+            },
+          ),
+        );
       },
       child: Container(
         alignment: Alignment.center,
@@ -143,7 +150,7 @@ class ButtonGlobal4 extends StatelessWidget {
         width: 70,
         padding: const EdgeInsets.symmetric(horizontal: 1),
         decoration: BoxDecoration(
-          color: GlobalColors.mainColor,
+          color: GlobalColors.buttColor,
           borderRadius: BorderRadius.circular(6),
           boxShadow: [
             BoxShadow(
@@ -171,7 +178,14 @@ class ButtonGlobal5 extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        print('Regis');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const MyHomePage();
+            },
+          ),
+        );
       },
       child: Container(
         alignment: Alignment.center,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:p01/utils/global.colors.dart';
 import 'package:p01/view/widgets/button.global.dart';
 import 'package:p01/view/widgets/social.login.dart';
 import 'package:p01/view/widgets/text.form.global.dart';
@@ -28,10 +27,10 @@ class RegisterView extends StatelessWidget {
                 ),
                 ),
                 const SizedBox(height: 50),
-                Text(
+                const Text(
                   'Register account',
                   style: TextStyle(
-                    color: GlobalColors.textColor,
+                    color: Colors.black,
                     fontSize: 16,
                     fontWeight: FontWeight.w500
                   ),

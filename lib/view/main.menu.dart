@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:p01/utils/global.colors.dart';
+import 'package:p01/view/serach.dart';
 import 'beranda.dart';
 import 'profile.dart';
 import 'upload.dart';
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -34,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body = Beranda();
         break;
       case 1:
-        //body = SearchPage();
+        body = SearchPage();
         break;
       case 2:
         body = Upload();
@@ -50,7 +53,8 @@ class _MyHomePageState extends State<MyHomePage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('My Chef App'),
+          title: const Text('My Chef'),
+          backgroundColor: GlobalColors.mainColor,
         ),
         body: body,
         bottomNavigationBar: BottomNavigationBar(

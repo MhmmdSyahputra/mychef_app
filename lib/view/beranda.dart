@@ -1,3 +1,4 @@
+// ignore: unnecessary_import
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:p01/view/detail.dart';
@@ -50,6 +51,7 @@ final List<Post> posts = [
   ),
 ];
 
+// ignore: use_key_in_widget_constructors
 class Beranda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -63,6 +65,7 @@ class Beranda extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
+                    // ignore: prefer_const_constructors
                     return Detail();
                   },
                 ),
@@ -78,6 +81,7 @@ class Beranda extends StatelessWidget {
                     Container(
                       width: 150,
                       height: 150,
+                      // ignore: prefer_const_constructors
                       margin: EdgeInsets.only(right: 8.0),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.0),
@@ -93,19 +97,23 @@ class Beranda extends StatelessWidget {
                         children: [
                           Text(
                             posts[index].namauser,
+                            // ignore: prefer_const_constructors
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 16.0,
                             ),
                           ),
+                          // ignore: prefer_const_constructors
                           SizedBox(height: 8.0),
                           Text(
                             posts[index].title,
+                            // ignore: prefer_const_constructors
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 18.0,
                             ),
                           ),
+                          // ignore: prefer_const_constructors
                           SizedBox(height: 8.0),
                           Text(
                             posts[index].shortText,

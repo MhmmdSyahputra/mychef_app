@@ -15,11 +15,25 @@ class SplashView extends StatelessWidget {
     });
     return Scaffold(
       backgroundColor: GlobalColors.mainColor,
-      body: Center(
-        child: Container(
-          alignment: Alignment.center,
-          child: Image.asset('assets/images/logo.png'),
-        )
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Image.asset('assets/images/logo.png'),
+          ),
+          const SizedBox(height: 10),
+          const Center(
+            child: Text(
+              'My Chef',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white
+              ),
+            ),
+          ),
+        ],
+        
       ),
     );
   }
