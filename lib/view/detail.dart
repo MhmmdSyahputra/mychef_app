@@ -24,27 +24,13 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(namauser),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 50),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 10),
-              child: Row(children: [
-                Icon(Icons.person),
-                SizedBox(width: 20),
-                Expanded(
-                  child: Text(
-                    namauser,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.0,
-                    ),
-                  ),
-                ),
-              ]),
-            ),
             SizedBox(
               height: 20,
             ),
